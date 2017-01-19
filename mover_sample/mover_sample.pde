@@ -1,17 +1,22 @@
-Mover[] movers = new Mover[20];
+Mover[] movers = new Mover[100];
 
 void setup(){
-  size(640, 360, P3D);
+  size(640, 360);
   background(255);
   for (int i = 0; i < movers.length; i++){
-    movers[i] = new Mover();
+    movers[i] = new Mover(random(0.1,5) ,0 ,0);
   }
 }
 
 void draw(){
   background(255);
   
+  PVector wind = new PVector(0.01, 0);
+  PVector gravity = new PVector(0, 0.1);
+  
   for (int i = 0; i < movers.length; i++){
+    movers[i].applyForce(wind);
+    movers[i].applyForce(gravity);
     movers[i].update();
     movers[i].checkEdge();
     movers[i].display();
@@ -23,52 +28,44 @@ class Mover{
   PVector location;
   PVector velocity;
   PVector acceleration;
-  float topspeed;
+  float mass;
   
-  Mover(){
-    location = new PVector(random(width), random(height), random(-1000,0));
-    velocity = new PVector(0,0,0);
-    topspeed = 4;
+  Mover(float m, float x, float y){
+    mass = m;
+    location = new PVector(x, y);
+    velocity = new PVector(0, 0);
+    acceleration = new PVector(0, 0);
+  }
+  
+  void applyForce(PVector force){
+    PVector f = PVector.div(force,mass);
+    acceleration.add(f);
   }
   
   void update(){
-    PVector mouse = new PVector(mouseX, mouseY, random(100));
-    PVector dir = PVector.sub(mouse, location);
-    dir.normalize();
-    dir.mult(0.5);
-    acceleration = dir;
-    
     velocity.add(acceleration);
-    velocity.limit(topspeed);
     location.add(velocity);
+    acceleration.mult(0);
   }
   
   void display(){
     stroke(0);
     fill(175);
-    pushMatrix();
-    translate(location.x, location.y, location.z);
-    sphere(15);
-    popMatrix();
+    ellipse(location.x, location.y, mass*16, mass*16);
   }
   
   void checkEdge(){
     if (location.x > width){
-      location.x = 0;
-    }else if (location.x < 0){
       location.x = width;
+      velocity.x *= -1;
+    }else if (location.x < 0){
+      velocity.x *= -1;
+      location.x = 0;
     }
     
     if (location.y > height){
-      location.y = 0;
-    }else if(location.y < 0){
+      velocity.y *= -1;
       location.y = height;
-    }
-    
-    if (location.z > 0){
-      location.x = random(width);
-      location.y = random(height);
-      location.z = -1000;
     }
   }
 }
