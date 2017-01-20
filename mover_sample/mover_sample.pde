@@ -11,7 +11,7 @@ void setup(){
 void draw(){
   background(255);
   
-  PVector wind = new PVector(0.001, 0);
+  PVector wind = new PVector(0.003, 0);
   PVector gravity = new PVector(0, 0.1);
   
   for (int i = 0; i < movers.length; i++){
