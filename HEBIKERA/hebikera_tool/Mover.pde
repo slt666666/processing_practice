@@ -28,5 +28,20 @@ class Mover {
     fill(127);
     ellipse(position.x,position.y,48,48);
   }
+  
+  void display2() {
+    float angle = velocity.heading();
+    stroke(0);
+    strokeWeight(2);
+    noFill();
+    pushMatrix();
+    translate(position.x, position.y);
+    beginShape();
+    vertex(48*cos(angle),48*sin(angle));
+    vertex(48*cos(angle+radians(120)),48*sin(angle+radians(120)));
+    vertex(48*cos(angle-radians(120)),48*sin(angle-radians(120)));
+    endShape(CLOSE);
+    popMatrix();
+  }
 
 }

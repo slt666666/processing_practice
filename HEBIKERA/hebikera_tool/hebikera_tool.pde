@@ -3,6 +3,7 @@ Mover2 mover2;
 Mover2 mover3;
 Mover2 mover4;
 
+
 void setup() {
   size(640,360);
   mover = new Mover();
@@ -15,12 +16,12 @@ void draw() {
   background(255);
   
   mover.update();
-  mover.display(); 
   mover2.update(mover);
-  mover2.display();
   mover3.update2(mover2);
-  mover3.display();
-  mover4.update2(mover3);
+  mover4.update2(mover3);  
+  mover.display2(); 
+  mover2.display();
+  mover3.display2();
   mover4.display();
   
   stroke(0);

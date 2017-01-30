@@ -3,6 +3,7 @@ class Mover2 {
   PVector position;
   PVector velocity;
   PVector acceleration;
+  PVector steer;
   float topspeed;
 
   Mover2() {
@@ -24,7 +25,7 @@ class Mover2 {
       desired.mult(topspeed);
     }
     
-    PVector steer = PVector.sub(desired, velocity);
+    steer = PVector.sub(desired, velocity);
     position.add(steer);
   }
 
@@ -41,7 +42,7 @@ class Mover2 {
       desired.mult(topspeed);
     }
     
-    PVector steer = PVector.sub(desired, velocity);
+    steer = PVector.sub(desired, velocity);
     position.add(steer);
   }
 
@@ -51,5 +52,19 @@ class Mover2 {
     fill(127);
     ellipse(position.x,position.y,48,48);
   }
-
+  
+  void display2() {
+    float angle = steer.heading();
+    stroke(0);
+    strokeWeight(2);
+    noFill();
+    pushMatrix();
+    translate(position.x, position.y);
+    beginShape();
+    vertex(48*cos(angle),48*sin(angle));
+    vertex(48*cos(angle+radians(120)),48*sin(angle+radians(120)));
+    vertex(48*cos(angle-radians(120)),48*sin(angle-radians(120)));
+    endShape(CLOSE);
+    popMatrix();
+  }
 }
