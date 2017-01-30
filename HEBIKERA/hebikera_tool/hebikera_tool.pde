@@ -1,35 +1,39 @@
-Mover mover;
-Mover2 mover2;
-Mover2 mover3;
-Mover2 mover4;
-
+Head head;
+Body body;
+Body body1;
+Body body2;
+Body body3;
 
 void setup() {
   size(640,360);
-  mover = new Mover();
-  mover2 = new Mover2();
-  mover3 = new Mover2();
-  mover4 = new Mover2();
+  head = new Head();
+  body = new Body();
+  body1 = new Body();
+  body2 = new Body();
+  body3 = new Body();
 }
 
 void draw() {
   background(255);
   
-  mover.update();
-  mover2.update(mover);
-  mover3.update2(mover2);
-  mover4.update2(mover3);  
-  mover.display2(); 
-  mover2.display();
-  mover3.display2();
-  mover4.display();
+  head.update();
+  body.update(head);
+  body1.update2(body);
+  body2.update2(body1);  
+  body3.update2(body2);
+  head.display(); 
+  body.display();
+  body1.display2();
+  body2.display();
+  body3.display2();
   
   stroke(0);
   noFill();
   beginShape();
-  vertex(mover.position.x,mover.position.y);
-  vertex(mover2.position.x,mover2.position.y);
-  vertex(mover3.position.x,mover3.position.y);
-  vertex(mover4.position.x,mover4.position.y);
+  vertex(head.position.x,head.position.y);
+  vertex(body.position.x,body.position.y);
+  vertex(body1.position.x,body1.position.y);
+  vertex(body2.position.x,body2.position.y);
+  vertex(body3.position.x,body3.position.y);
   endShape();
 }

@@ -1,4 +1,4 @@
-class Mover2 {
+class Body {
 
   PVector position;
   PVector velocity;
@@ -6,19 +6,19 @@ class Mover2 {
   PVector steer;
   float topspeed;
 
-  Mover2() {
+  Body() {
     position = new PVector(width/2,height/2);
     velocity = new PVector(0,0);
     topspeed = 5;
   }
 
-  void update(Mover target) {
+  void update(Head target) {
     
     PVector desired = PVector.sub(target.position, position);
     
     float distance = desired.mag();
     desired.normalize();
-    if (distance < 100){
+    if (distance < 20){
       float m = map(distance,0,100,0,topspeed);
       desired.mult(m);
     }else{
@@ -29,13 +29,13 @@ class Mover2 {
     position.add(steer);
   }
 
-  void update2(Mover2 target) {
+  void update2(Body target) {
     
     PVector desired = PVector.sub(target.position, position);
     
     float distance = desired.mag();
     desired.normalize();
-    if (distance < 100){
+    if (distance < 20){
       float m = map(distance,0,100,0,topspeed);
       desired.mult(m);
     }else{
@@ -50,7 +50,7 @@ class Mover2 {
     stroke(0);
     strokeWeight(2);
     fill(127);
-    ellipse(position.x,position.y,48,48);
+    ellipse(position.x,position.y,10,10);
   }
   
   void display2() {
@@ -61,9 +61,9 @@ class Mover2 {
     pushMatrix();
     translate(position.x, position.y);
     beginShape();
-    vertex(48*cos(angle),48*sin(angle));
-    vertex(48*cos(angle+radians(120)),48*sin(angle+radians(120)));
-    vertex(48*cos(angle-radians(120)),48*sin(angle-radians(120)));
+    vertex(10*cos(angle),10*sin(angle));
+    vertex(10*cos(angle+radians(120)),10*sin(angle+radians(120)));
+    vertex(10*cos(angle-radians(120)),10*sin(angle-radians(120)));
     endShape(CLOSE);
     popMatrix();
   }
