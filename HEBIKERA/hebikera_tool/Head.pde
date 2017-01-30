@@ -5,8 +5,8 @@ class Head {
   PVector acceleration;
   float topspeed;
 
-  Head() {
-    position = new PVector(width/2,height/2);
+  Head(float x, float y) {
+    position = new PVector(x, y);
     velocity = new PVector(0,0);
     topspeed = 5;
   }
