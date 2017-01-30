@@ -16,7 +16,7 @@ class Flock{
   
   void update(){
     for (Creature c: creatures){
-      c.update(); 
+      c.update(creatures);
     }
   }
   

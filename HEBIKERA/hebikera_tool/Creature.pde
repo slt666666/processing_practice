@@ -10,9 +10,9 @@ class Creature {
     }
   }
   
-  void update(){
+  void update(ArrayList<Creature> creatures){
     //頭部の更新
-    brain.update();
+    brain.update(creatures);
     //頭部に接続してるBodyパーツ更新
     Body neck = bodies.get(0);
     neck.update(brain);
