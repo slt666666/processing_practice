@@ -23,7 +23,6 @@ class Creature {
   }
   
   void display(){
-    brain.display();
     for (int i = 0; i < bodies.size(); i++){
       if (i%2 == 0){
         bodies.get(i).display();
@@ -31,6 +30,7 @@ class Creature {
         bodies.get(i).display2();
       }
     }
+    brain.display();
   }
   
   void connect(){

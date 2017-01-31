@@ -61,9 +61,7 @@ class Head {
     strokeWeight(2);
     pushMatrix();
     translate(position.x, position.y);
-    fill(0);
-    ellipse(0,0,16*reductionRate,16);
-    noFill();
+    fill(255);
     beginShape();
     //右向き
     if(angle <= PI/2 && angle >= -PI/2){
@@ -81,6 +79,9 @@ class Head {
       vertex(30*cos(angle-PI/3)*reductionRate,-30*sin(angle-PI/3));
     }
     endShape(CLOSE);
+    //目
+    fill(0);
+    ellipse(0,0,16*reductionRate,16);
     popMatrix();
   }
 

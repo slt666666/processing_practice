@@ -49,7 +49,15 @@ class Body {
     stroke(0);
     strokeWeight(2);
     fill(127);
-    ellipse(position.x,position.y,10,10);
+    pushMatrix();
+    translate(position.x, position.y);
+    beginShape();
+    vertex(-10,-10);
+    vertex(10,-10);
+    vertex(10,10);
+    vertex(-10,10);
+    endShape(CLOSE);
+    popMatrix();
   }
   
   void display2() {
