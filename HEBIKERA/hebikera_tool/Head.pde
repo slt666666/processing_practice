@@ -52,7 +52,10 @@ class Head {
   }
   
   void display() {
-    float angle = velocity.heading();
+    // processingでは上ほどyが小さく、下ほどyが大きい。
+    // radian、角度を使う計算を取り入れるときは注意
+    // 今回は正規の座標系で計算してからprocessing座標に変換する
+    float angle = atan2(-velocity.y,velocity.x);
     reductionRate = map(velocity.x,0,5,0,1);
     stroke(0);
     strokeWeight(2);
@@ -62,23 +65,23 @@ class Head {
     ellipse(0,0,16*reductionRate,16);
     noFill();
     beginShape();
-    //右向き ※radianで計算するときは反時計回り
+    //右向き
     if(angle <= PI/2 && angle >= -PI/2){
-      vertex(40*cos(angle+radians(30))*reductionRate,40*sin(angle+radians(30)));
-      vertex(15*cos(angle+radians(150))*reductionRate,15*sin(angle+radians(150)));
-      vertex(30*cos(angle-radians(120))*reductionRate,30*sin(angle-radians(120)));
-      vertex(50*cos(angle-radians(120))*reductionRate,50*sin(angle-radians(120)));
-      vertex(30*cos(angle-radians(60))*reductionRate,30*sin(angle-radians(60)));
+      vertex(40*cos(angle-PI/6)*reductionRate,-40*sin(angle-PI/6));
+      vertex(15*cos(angle-PI*5/6)*reductionRate,-15*sin(angle-PI*5/6));
+      vertex(30*cos(angle+PI*2/3)*reductionRate,-30*sin(angle+PI*2/3));
+      vertex(50*cos(angle+PI*2/3)*reductionRate,-50*sin(angle+PI*2/3));
+      vertex(30*cos(angle+PI/3)*reductionRate,-30*sin(angle+PI/3));
     }else{
     //左向き
-      vertex(40*cos(angle-radians(30))*reductionRate,40*sin(angle-radians(30)));
-      vertex(15*cos(angle-radians(150))*reductionRate,15*sin(angle-radians(150)));
-      vertex(30*cos(angle+radians(120))*reductionRate,30*sin(angle+radians(120)));
-      vertex(50*cos(angle+radians(120))*reductionRate,50*sin(angle+radians(120)));
-      vertex(30*cos(angle+radians(60))*reductionRate,30*sin(angle+radians(60)));
+      println("kokokara");
+      vertex(-40*cos(angle+PI/6)*reductionRate,-40*sin(angle+PI/6));
+      vertex(-15*cos(angle+PI*5/6)*reductionRate,-15*sin(angle+PI*5/6));
+      vertex(-30*cos(angle-PI*2/3)*reductionRate,-30*sin(angle-PI*2/3));
+      vertex(-50*cos(angle-PI*2/3)*reductionRate,-50*sin(angle-PI*2/3));
+      vertex(-30*cos(angle-PI/3)*reductionRate,-30*sin(angle-PI/3));
     }
     endShape(CLOSE);
-    
     popMatrix();
   }
 
