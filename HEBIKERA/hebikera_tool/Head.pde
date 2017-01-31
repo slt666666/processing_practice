@@ -56,7 +56,7 @@ class Head {
     // radian、角度を使う計算を取り入れるときは注意
     // 今回は正規の座標系で計算してからprocessing座標に変換する
     float angle = atan2(-velocity.y,velocity.x);
-    reductionRate = map(velocity.x,0,5,0,1);
+    reductionRate = map(abs(velocity.x),0,5,0,1);
     stroke(0);
     strokeWeight(2);
     pushMatrix();
@@ -74,12 +74,11 @@ class Head {
       vertex(30*cos(angle+PI/3)*reductionRate,-30*sin(angle+PI/3));
     }else{
     //左向き
-      println("kokokara");
-      vertex(-40*cos(angle+PI/6)*reductionRate,-40*sin(angle+PI/6));
-      vertex(-15*cos(angle+PI*5/6)*reductionRate,-15*sin(angle+PI*5/6));
-      vertex(-30*cos(angle-PI*2/3)*reductionRate,-30*sin(angle-PI*2/3));
-      vertex(-50*cos(angle-PI*2/3)*reductionRate,-50*sin(angle-PI*2/3));
-      vertex(-30*cos(angle-PI/3)*reductionRate,-30*sin(angle-PI/3));
+      vertex(40*cos(angle+PI/6)*reductionRate,-40*sin(angle+PI/6));
+      vertex(15*cos(angle+PI*5/6)*reductionRate,-15*sin(angle+PI*5/6));
+      vertex(30*cos(angle-PI*2/3)*reductionRate,-30*sin(angle-PI*2/3));
+      vertex(50*cos(angle-PI*2/3)*reductionRate,-50*sin(angle-PI*2/3));
+      vertex(30*cos(angle-PI/3)*reductionRate,-30*sin(angle-PI/3));
     }
     endShape(CLOSE);
     popMatrix();
