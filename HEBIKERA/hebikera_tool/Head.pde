@@ -3,7 +3,7 @@ class Head {
   PVector position;
   PVector velocity;
   float topspeed;
-  float reductionRate = 1;
+  float reductionRate;
 
   Head(float x, float y) {
     position = new PVector(x, y);
@@ -54,13 +54,12 @@ class Head {
   void display() {
     float angle = velocity.heading();
     reductionRate = map(velocity.mag(),0,5,0,1);
-    println(degrees(angle));
     stroke(0);
     strokeWeight(2);
     pushMatrix();
     translate(position.x, position.y);
     fill(0);
-    ellipse(0,0,16,16);
+    ellipse(0,0,16*reductionRate,16);
     noFill();
     beginShape();
     vertex(40*cos(angle+radians(30))*reductionRate,40*sin(angle+radians(30)));
