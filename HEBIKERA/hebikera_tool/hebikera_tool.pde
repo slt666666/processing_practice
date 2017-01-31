@@ -2,7 +2,7 @@ Flock creatures;
 
 void setup() {
   size(640,360);
-  creatures = new Flock(5);
+  creatures = new Flock(1);
 }
 
 void draw() {

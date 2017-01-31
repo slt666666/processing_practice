@@ -52,15 +52,20 @@ class Head {
   
   void display() {
     float angle = velocity.heading();
+    println(angle);
     stroke(0);
     strokeWeight(2);
-    noFill();
     pushMatrix();
     translate(position.x, position.y);
+    fill(0);
+    ellipse(0,0,16,16);
+    noFill();
     beginShape();
-    vertex(10*cos(angle),10*sin(angle));
-    vertex(10*cos(angle+radians(120)),10*sin(angle+radians(120)));
-    vertex(10*cos(angle-radians(120)),10*sin(angle-radians(120)));
+    vertex(40*cos(angle+radians(30)),40*sin(angle+radians(30)));
+    vertex(15*cos(angle+radians(150)),15*sin(angle+radians(150)));
+    vertex(30*cos(angle-radians(120)),30*sin(angle-radians(120)));
+    vertex(50*cos(angle-radians(120)),50*sin(angle-radians(120)));
+    vertex(30*cos(angle-radians(60)),30*sin(angle-radians(60)));
     endShape(CLOSE);
     popMatrix();
   }
