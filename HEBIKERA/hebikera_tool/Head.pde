@@ -53,7 +53,7 @@ class Head {
   
   void display() {
     float angle = velocity.heading();
-    reductionRate = map(velocity.mag(),0,5,0,1);
+    reductionRate = map(velocity.x,0,5,0,1);
     stroke(0);
     strokeWeight(2);
     pushMatrix();
@@ -62,12 +62,23 @@ class Head {
     ellipse(0,0,16*reductionRate,16);
     noFill();
     beginShape();
-    vertex(40*cos(angle+radians(30))*reductionRate,40*sin(angle+radians(30)));
-    vertex(15*cos(angle+radians(150))*reductionRate,15*sin(angle+radians(150)));
-    vertex(30*cos(angle-radians(120))*reductionRate,30*sin(angle-radians(120)));
-    vertex(50*cos(angle-radians(120))*reductionRate,50*sin(angle-radians(120)));
-    vertex(30*cos(angle-radians(60))*reductionRate,30*sin(angle-radians(60)));
+    //右向き ※radianで計算するときは反時計回り
+    if(angle <= PI/2 && angle >= -PI/2){
+      vertex(40*cos(angle+radians(30))*reductionRate,40*sin(angle+radians(30)));
+      vertex(15*cos(angle+radians(150))*reductionRate,15*sin(angle+radians(150)));
+      vertex(30*cos(angle-radians(120))*reductionRate,30*sin(angle-radians(120)));
+      vertex(50*cos(angle-radians(120))*reductionRate,50*sin(angle-radians(120)));
+      vertex(30*cos(angle-radians(60))*reductionRate,30*sin(angle-radians(60)));
+    }else{
+    //左向き
+      vertex(40*cos(angle-radians(30))*reductionRate,40*sin(angle-radians(30)));
+      vertex(15*cos(angle-radians(150))*reductionRate,15*sin(angle-radians(150)));
+      vertex(30*cos(angle+radians(120))*reductionRate,30*sin(angle+radians(120)));
+      vertex(50*cos(angle+radians(120))*reductionRate,50*sin(angle+radians(120)));
+      vertex(30*cos(angle+radians(60))*reductionRate,30*sin(angle+radians(60)));
+    }
     endShape(CLOSE);
+    
     popMatrix();
   }
 
