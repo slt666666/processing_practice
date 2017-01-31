@@ -12,7 +12,7 @@ class Creature {
   
   void update(ArrayList<Creature> creatures){
     //頭部の更新
-   // brain.update(creatures);
+    brain.update(creatures);
     //頭部に接続してるBodyパーツ更新
     Body neck = bodies.get(0);
     neck.update(brain);
@@ -26,9 +26,9 @@ class Creature {
     brain.display();
     for (int i = 0; i < bodies.size(); i++){
       if (i%2 == 0){
-        //bodies.get(i).display();
+        bodies.get(i).display();
       }else{
-        //bodies.get(i).display2();
+        bodies.get(i).display2();
       }
     }
   }

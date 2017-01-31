@@ -3,6 +3,7 @@ class Head {
   PVector position;
   PVector velocity;
   float topspeed;
+  float reductionRate = 1;
 
   Head(float x, float y) {
     position = new PVector(x, y);
@@ -52,7 +53,8 @@ class Head {
   
   void display() {
     float angle = velocity.heading();
-    println(angle);
+    reductionRate = map(velocity.mag(),0,5,0,1);
+    println(degrees(angle));
     stroke(0);
     strokeWeight(2);
     pushMatrix();
@@ -61,11 +63,11 @@ class Head {
     ellipse(0,0,16,16);
     noFill();
     beginShape();
-    vertex(40*cos(angle+radians(30)),40*sin(angle+radians(30)));
-    vertex(15*cos(angle+radians(150)),15*sin(angle+radians(150)));
-    vertex(30*cos(angle-radians(120)),30*sin(angle-radians(120)));
-    vertex(50*cos(angle-radians(120)),50*sin(angle-radians(120)));
-    vertex(30*cos(angle-radians(60)),30*sin(angle-radians(60)));
+    vertex(40*cos(angle+radians(30))*reductionRate,40*sin(angle+radians(30)));
+    vertex(15*cos(angle+radians(150))*reductionRate,15*sin(angle+radians(150)));
+    vertex(30*cos(angle-radians(120))*reductionRate,30*sin(angle-radians(120)));
+    vertex(50*cos(angle-radians(120))*reductionRate,50*sin(angle-radians(120)));
+    vertex(30*cos(angle-radians(60))*reductionRate,30*sin(angle-radians(60)));
     endShape(CLOSE);
     popMatrix();
   }
