@@ -54,9 +54,9 @@ class Body {
     }else{
       reductionRate = map(mapAngle,0,PI,1,0);
     }
-    stroke(0);
+    stroke(random(255));
     strokeWeight(2);
-    fill(255);
+    fill(random(255));
     pushMatrix();
     translate(position.x, position.y);
     beginShape();
@@ -92,9 +92,9 @@ class Body {
     }else{
       reductionRate = map(mapAngle,0,PI,1,0);
     }
-    stroke(0);
+    stroke(random(255));
     strokeWeight(2);
-    fill(255);
+    fill(random(255));
     pushMatrix();
     translate(position.x, position.y);
     beginShape();

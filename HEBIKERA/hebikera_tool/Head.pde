@@ -57,11 +57,11 @@ class Head {
     // 今回は正規の座標系で計算してからprocessing座標に変換する
     float angle = atan2(-velocity.y,velocity.x);
     reductionRate = map(abs(velocity.x),0,5,0,1);
-    stroke(0);
+    stroke(random(255));
     strokeWeight(2);
     pushMatrix();
     translate(position.x, position.y);
-    fill(255);
+    fill(random(255));
     beginShape();
     //右向き
     if(angle <= PI/2 && angle >= -PI/2){
@@ -80,6 +80,8 @@ class Head {
     }
     endShape(CLOSE);
     //目
+    stroke(0);
+    strokeWeight(2);
     fill(0);
     ellipse(0,0,10*reductionRate,10);
     popMatrix();
