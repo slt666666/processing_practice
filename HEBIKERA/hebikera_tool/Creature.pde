@@ -1,5 +1,6 @@
 class Creature {
   ArrayList<Body> bodies;
+  float[] tailParts = new float[8];
   Head brain;
   
   Creature(int num, Head head){
@@ -23,13 +24,10 @@ class Creature {
   }
   
   void display(){
-    for (int i = 0; i < bodies.size(); i++){
-      if (i != bodies.size()-1){
-        bodies.get(i).displayBody();
-      }else{
-        bodies.get(i).displayTail();
-      }
+    for (int i = 0; i < bodies.size()-2; i++){
+      bodies.get(i).displayBody();
     }
+    bodies.get(bodies.size()-1).displayTail();
     brain.display();
   }
   
