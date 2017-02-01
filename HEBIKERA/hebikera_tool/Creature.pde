@@ -24,10 +24,10 @@ class Creature {
   
   void display(){
     for (int i = 0; i < bodies.size(); i++){
-      if (i%2 == 0){
-        bodies.get(i).display();
+      if (i != bodies.size()-1){
+        bodies.get(i).displayBody();
       }else{
-        bodies.get(i).display2();
+        bodies.get(i).displayTail();
       }
     }
     brain.display();

@@ -23,7 +23,7 @@ class Flock{
   void display(){
     for (Creature c: creatures){
       c.display(); 
-      c.connect();
+      //c.connect();
     }
   }
 }
