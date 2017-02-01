@@ -56,7 +56,7 @@ class Body {
     }
     stroke(0);
     strokeWeight(2);
-    noFill();
+    fill(255);
     pushMatrix();
     translate(position.x, position.y);
     beginShape();
@@ -66,8 +66,8 @@ class Body {
       vertex(20*cos(angle+PI/2)*reductionRate,-20*sin(angle+PI/2));
       vertex(30*cos(angle+PI*9/10)*reductionRate,-30*sin(angle+PI*9/10));
       vertex(20*cos(angle+PI*7/6)*reductionRate,-20*sin(angle+PI*7/6));
-      vertex(30*cos(angle+PI*6/5)*reductionRate,-30*sin(angle+PI*6/5));
-      vertex(20*cos(angle+PI*6/5)*reductionRate,-20*sin(angle+PI*6/5));
+      vertex(30*cos(angle+PI*13/10)*reductionRate,-30*sin(angle+PI*13/10));
+      vertex(20*cos(angle+PI*13/10)*reductionRate,-20*sin(angle+PI*13/10));
       vertex(20*cos(angle+PI*8/5)*reductionRate,-20*sin(angle+PI*8/5));
     }else{
     //左向き
@@ -76,8 +76,8 @@ class Body {
       vertex(20*cos(angle-PI/2)*reductionRate,-20*sin(angle-PI/2));
       vertex(30*cos(angle-PI*9/10)*reductionRate,-30*sin(angle-PI*9/10));
       vertex(20*cos(angle-PI*7/6)*reductionRate,-20*sin(angle-PI*7/6));
-      vertex(30*cos(angle-PI*6/5)*reductionRate,-30*sin(angle-PI*6/5));
-      vertex(20*cos(angle-PI*6/5)*reductionRate,-20*sin(angle-PI*6/5));
+      vertex(30*cos(angle-PI*13/10)*reductionRate,-30*sin(angle-PI*13/10));
+      vertex(20*cos(angle-PI*13/10)*reductionRate,-20*sin(angle-PI*13/10));
       vertex(20*cos(angle-PI*8/5)*reductionRate,-20*sin(angle-PI*8/5));
     }
     endShape(CLOSE);
@@ -94,7 +94,7 @@ class Body {
     }
     stroke(0);
     strokeWeight(2);
-    noFill();
+    fill(255);
     pushMatrix();
     translate(position.x, position.y);
     beginShape();

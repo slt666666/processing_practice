@@ -24,18 +24,18 @@ class Creature {
   }
   
   void display(){
-    for (int i = 0; i < bodies.size()-2; i++){
+    bodies.get(bodies.size()-1).displayTail();
+    for (int i = bodies.size()-3; i >= 0; i--){
       bodies.get(i).displayBody();
     }
-    bodies.get(bodies.size()-1).displayTail();
     brain.display();
   }
   
   void connect(){
-    stroke(0);
+    stroke(255);
     noFill();
     beginShape();
-    vertex(brain.position.x,brain.position.y);
+    //vertex(brain.position.x,brain.position.y);
     for (int i = 0; i < bodies.size(); i++){
       vertex(bodies.get(i).position.x, bodies.get(i).position.y);
     }

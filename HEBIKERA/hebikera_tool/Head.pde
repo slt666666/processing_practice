@@ -30,7 +30,7 @@ class Head {
   }
   
   PVector separate(ArrayList<Creature> creatures){
-    float desiredDistance = 20;
+    float desiredDistance = 30;
     PVector sum = new PVector();
     int count = 0;
     for (Creature c: creatures){
@@ -81,7 +81,7 @@ class Head {
     endShape(CLOSE);
     //目
     fill(0);
-    ellipse(0,0,16*reductionRate,16);
+    ellipse(0,0,10*reductionRate,10);
     popMatrix();
   }
 
