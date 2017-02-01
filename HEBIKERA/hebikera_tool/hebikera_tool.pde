@@ -7,8 +7,10 @@ void setup() {
 
 void draw() {
   background(127);
+
   creatures.update();
   creatures.display();
+  text("Click to generate new Indoor fish", 0, height-10);
 }
 
 void mousePressed(){
