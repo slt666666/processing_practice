@@ -1,14 +1,7 @@
-class Head {
-
-  PVector position;
-  PVector velocity;
-  float topspeed;
-  float reductionRate;
+class Head extends BodyParts{
 
   Head(float x, float y) {
-    position = new PVector(x, y);
-    velocity = new PVector(0,0);
-    topspeed = 5;
+    super(x, y);
   }
   
   void update(ArrayList<Creature> creatures) {
@@ -18,10 +11,9 @@ class Head {
     velocity.add(separateP);
     velocity.limit(topspeed);
     position.add(velocity);
-}
+  }
   
   PVector follow() {
-    
     PVector mouse = new PVector(mouseX,mouseY);
     PVector followPower = PVector.sub(mouse,position);
     followPower.setMag(0.2);
@@ -52,10 +44,7 @@ class Head {
   }
   
   void display() {
-    // processingでは上ほどyが小さく、下ほどyが大きい。
-    // radian、角度を使う計算を取り入れるときは注意
-    // 今回は正規の座標系で計算してからprocessing座標に変換する
-    float angle = atan2(-velocity.y,velocity.x);
+    angle = atan2(-velocity.y,velocity.x);
     reductionRate = map(abs(velocity.x),0,5,0,1);
     stroke(random(200));
     strokeWeight(2);
