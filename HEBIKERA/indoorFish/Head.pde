@@ -14,8 +14,7 @@ class Head extends BodyParts{
   }
   
   PVector follow() {
-    PVector mouse = new PVector(mouseX,mouseY);
-    PVector followPower = PVector.sub(mouse,position);
+    PVector followPower = PVector.sub(ball.position,position);
     followPower.setMag(0.2);
     followPower.limit(topspeed);
     return followPower;
