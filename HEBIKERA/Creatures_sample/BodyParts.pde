@@ -44,5 +44,9 @@ class BodyParts {
     fill(random(200));
     
   }
+  
+  void displayWing(){ 
+
+  }
 
 }
