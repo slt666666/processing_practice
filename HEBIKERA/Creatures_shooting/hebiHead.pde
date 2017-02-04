@@ -25,14 +25,16 @@ class hebiHead extends BodyParts {
     float desiredDistance = 12;
     PVector sum = new PVector();
     int count = 0;
-    for (Creature c: FishAndHebi.creatures){ 
-      float d = PVector.dist(position, c.bodies.get(0).position);
-      if ((d > 0) && (d < desiredDistance)){
-        PVector diff = PVector.sub(position, c.bodies.get(0).position);
-        diff.normalize();
-        diff.div(d);
-        sum.add(diff);
-        count++;
+    for (Creature c: FishAndHebi.creatures){
+      for (BodyParts p: c.bodies){
+        float d = PVector.dist(position, p.position);
+        if ((d > 0) && (d < desiredDistance)){
+          PVector diff = PVector.sub(position, p.position);
+          diff.normalize();
+          diff.div(d);
+          sum.add(diff);
+          count++;
+        }
       }
     }
     if (count > 0){

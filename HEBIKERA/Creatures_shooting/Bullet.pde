@@ -4,7 +4,7 @@ class Bullet {
   float dx = 4;
   
   Bullet(){
-    position = new PVector(mouseX, mouseY);
+    position = new PVector(0, random(height));
   }
   
   void move(){

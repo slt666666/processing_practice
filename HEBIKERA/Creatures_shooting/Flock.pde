@@ -15,11 +15,11 @@ class Flock{
   
   void addFish(){
     Head brain = new Head(mouseX, mouseY);
-    creatures.add(new Creature(6, brain));
+    creatures.add(new CreatureFish(6, brain));
   }
   
   void addHebi(){
-    hebiHead brain = new hebiHead(random(width), random(height));
+    hebiHead brain = new hebiHead(mouseX, mouseY);
     creatures.add(new CreatureHebikera(6, brain));
   }
   

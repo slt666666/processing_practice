@@ -26,8 +26,11 @@ void draw() {
 }
 
 void mousePressed(){
-   //creatures.addCreature();
-   //hebikeras.addCreature();
+   FishAndHebi.addFish();
+   FishAndHebi.addHebi();   
+}
+
+void keyPressed(){
    Bullet bullet = new Bullet();
    bullets.add(bullet);
 }
