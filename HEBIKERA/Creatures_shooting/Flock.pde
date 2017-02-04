@@ -15,15 +15,15 @@ class Flock{
   
   void addFish(int num){
     for (int i = 0; i < num; i++){
-      fishHead brain = new fishHead(mouseX, mouseY, 0);
+      fishHead brain = new fishHead(width/2, height/2, 0);
       creatures.add(new CreatureFish(6, brain));
     }
   }
   
   void addHebi(){
     balls.add(new Ball());
-    hebiHead brain = new hebiHead(mouseX, mouseY, balls.size()-1);
-    creatures.add(new CreatureHebikera(6, brain));
+    hebiHead brain = new hebiHead(width/2, height/2, balls.size()-1);
+    creatures.add(new CreatureHebikera(4, brain));
   }
   
   void update(){

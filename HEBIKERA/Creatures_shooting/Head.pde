@@ -43,7 +43,7 @@ class Head extends BodyParts{
     if (count > 0){
       sum.div(count);
       sum.normalize();
-      sum.mult(0.8);
+      sum.mult(0.6);
     }
     return sum;
   }

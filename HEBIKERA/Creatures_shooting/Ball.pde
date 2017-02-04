@@ -6,8 +6,8 @@ class Ball {
   
   Ball(){
     position = new PVector(random(width), random(height));
-    dx = 4;
-    dy = 3;
+    dx = random(1,6);
+    dy = random(1,6);
   }
   
   void move(){

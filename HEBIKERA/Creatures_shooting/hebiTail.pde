@@ -9,6 +9,7 @@ class hebiTail extends BodyParts{
   
   void display() {
     super.display();
+    fill(127,64,255);
     pushMatrix();
     translate(position.x, position.y);
     beginShape();

@@ -7,13 +7,13 @@ class hebiHead extends Head {
   void display() {
     angle = atan2(-velocity.y,velocity.x);
     reductionRate = map(abs(velocity.x),0,5,0,1);
-    stroke(random(200));
+    stroke(127);
     strokeWeight(2);
     pushMatrix();
     translate(position.x, position.y);
-    fill(random(200));
     if(angle <= PI/2 && angle >= -PI/2){
       //右向き
+      fill(127,0,0);
       beginShape();
       vertex(10*cos(angle)*reductionRate,-10*sin(angle));
       vertex(12.8*cos(angle+PI/3)*reductionRate,-12.8*sin(angle+PI/3));
@@ -68,6 +68,7 @@ class hebiHead extends Head {
       ellipse(12*cos(angle+PI*16/9)*reductionRate,-12*sin(angle+PI*16/9),4*reductionRate,4);
     }else{
       //左向き
+      fill(127,0,0);
       beginShape();
       vertex(10*cos(angle)*reductionRate,-10*sin(angle));
       vertex(12.8*cos(angle-PI/3)*reductionRate,-12.8*sin(angle-PI/3));

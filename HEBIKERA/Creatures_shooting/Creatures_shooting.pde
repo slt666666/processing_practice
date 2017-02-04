@@ -28,15 +28,16 @@ void draw() {
        bullets.remove(bullets.get(i));
      }
   }
+  fill(0);
   text("Click to generate new creature", 0, height-10);
 }
 
 void mousePressed(){
-   FishAndHebi.addFish(5);
-   FishAndHebi.addHebi();   
+   Bullet bullet = new Bullet();
+   bullets.add(bullet);   
 }
 
 void keyPressed(){
-   Bullet bullet = new Bullet();
-   bullets.add(bullet);
+   FishAndHebi.addFish(5);
+   FishAndHebi.addHebi();
 }

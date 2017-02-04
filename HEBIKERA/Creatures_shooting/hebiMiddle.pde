@@ -21,8 +21,11 @@ class hebiMiddle extends BodyParts {
 
   void display() {
     super.display();
+    stroke(random(200));
+    strokeWeight(2);
     pushMatrix();
     translate(position.x, position.y);
+    fill(127,0,255);
     if(angle <= PI/2 && angle >= -PI/2){
     //右向き
       beginShape();
