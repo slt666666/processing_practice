@@ -25,4 +25,12 @@ class hebikeraFlock{
       h.display(); 
     }
   }
+  
+  void deadCheck(){
+    for (int i = hebikeras.size()-1; i >= 0; i--){
+      if(hebikeras.get(i).brain.collision()){
+        hebikeras.remove(hebikeras.get(i));
+      }
+    }
+  }
 }

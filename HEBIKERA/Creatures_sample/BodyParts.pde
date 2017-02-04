@@ -6,6 +6,8 @@ class BodyParts {
   float reductionRate;
   float angle;
   
+  boolean hit = false;
+  
   BodyParts(float x, float y) {
     position = new PVector(x,y);
     velocity = new PVector(0,0);
@@ -45,8 +47,13 @@ class BodyParts {
     
   }
   
-  void displayWing(){ 
-
+  boolean collision(){
+    for (int i = bullets.size()-1; i >= 0; i--){
+      if (abs(position.x-bullets.get(i).position.x) < 40 && abs(position.y-bullets.get(i).position.y) < 40){
+        return true;
+      }
+    }
+    return false;
   }
 
 }

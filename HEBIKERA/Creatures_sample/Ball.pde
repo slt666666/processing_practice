@@ -12,7 +12,7 @@ class Ball {
   
     stroke( 0, 0, 255, 100 );
     fill( 0, 255, 255, 100 );
-    ellipse( position.x, position.y, 10, 10 );
+    //ellipse( position.x, position.y, 10, 10 );
    
     position.x += dx;
     position.y += dy;
