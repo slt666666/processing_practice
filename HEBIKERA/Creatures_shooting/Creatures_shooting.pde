@@ -3,7 +3,7 @@ ArrayList<Ball> balls;
 ArrayList<Bullet> bullets;
 
 void setup() {
-  size(640,360);
+  size(960,540);
   FishAndHebi = new Flock(10,2);
   balls = new ArrayList<Ball>();
   balls.add(new Ball());
