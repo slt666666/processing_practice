@@ -42,7 +42,7 @@ class hebiMiddle extends BodyParts {
       beginShape();
       curveVertex(30*cos(angle+PI/2)*reductionRate,-30*sin(angle+PI/2)*reductionRate);
       curveVertex(30*cos(angle+PI/2)*reductionRate,-30*sin(angle+PI/2)*reductionRate);
-      curveVertex(120*cos(angle+PI/2)*reductionRate,-120*sin(angle+PI/2)*reductionRate);
+      curveVertex(200*cos(angle+PI/2)*reductionRate,-200*sin(angle+PI/2)*reductionRate);
       curveVertex(75*cos(angle+PI*3/5)*reductionRate,-75*sin(angle+PI*3/5)*reductionRate);
       curveVertex(30*cos(angle+PI/2)*reductionRate,-30*sin(angle+PI/2)*reductionRate);
       curveVertex(30*cos(angle+PI/2)*reductionRate,-30*sin(angle+PI/2)*reductionRate);
@@ -50,7 +50,7 @@ class hebiMiddle extends BodyParts {
       beginShape();
       curveVertex(30*cos(angle-PI/2)*reductionRate,-30*sin(angle-PI/2)*reductionRate);
       curveVertex(30*cos(angle-PI/2)*reductionRate,-30*sin(angle-PI/2)*reductionRate);
-      curveVertex(120*cos(angle-PI/2)*reductionRate,-120*sin(angle-PI/2)*reductionRate);
+      curveVertex(200*cos(angle-PI/2)*reductionRate,-200*sin(angle-PI/2)*reductionRate);
       curveVertex(75*cos(angle-PI*3/5)*reductionRate,-75*sin(angle-PI*3/5)*reductionRate);
       curveVertex(30*cos(angle-PI/2)*reductionRate,-30*sin(angle-PI/2)*reductionRate);
       curveVertex(30*cos(angle-PI/2)*reductionRate,-30*sin(angle-PI/2)*reductionRate);
@@ -74,7 +74,7 @@ class hebiMiddle extends BodyParts {
       beginShape();
       curveVertex(30*cos(angle-PI/2)*reductionRate,-30*sin(angle-PI/2)*reductionRate);
       curveVertex(30*cos(angle-PI/2)*reductionRate,-30*sin(angle-PI/2)*reductionRate);
-      curveVertex(120*cos(angle-PI/2)*reductionRate,-120*sin(angle-PI/2)*reductionRate);
+      curveVertex(200*cos(angle-PI/2)*reductionRate,-200*sin(angle-PI/2)*reductionRate);
       curveVertex(75*cos(angle-PI*3/5)*reductionRate,-75*sin(angle-PI*3/5)*reductionRate);
       curveVertex(30*cos(angle-PI/2)*reductionRate,-30*sin(angle-PI/2)*reductionRate);
       curveVertex(30*cos(angle-PI/2)*reductionRate,-30*sin(angle-PI/2)*reductionRate);
@@ -82,7 +82,7 @@ class hebiMiddle extends BodyParts {
       beginShape();
       curveVertex(30*cos(angle+PI/2)*reductionRate,-30*sin(angle+PI/2)*reductionRate);
       curveVertex(30*cos(angle+PI/2)*reductionRate,-30*sin(angle+PI/2)*reductionRate);
-      curveVertex(120*cos(angle+PI/2)*reductionRate,-120*sin(angle+PI/2)*reductionRate);
+      curveVertex(200*cos(angle+PI/2)*reductionRate,-200*sin(angle+PI/2)*reductionRate);
       curveVertex(75*cos(angle+PI*3/5)*reductionRate,-75*sin(angle+PI*3/5)*reductionRate);
       curveVertex(30*cos(angle+PI/2)*reductionRate,-30*sin(angle+PI/2)*reductionRate);
       curveVertex(30*cos(angle+PI/2)*reductionRate,-30*sin(angle+PI/2)*reductionRate);

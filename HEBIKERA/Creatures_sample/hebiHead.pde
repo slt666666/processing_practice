@@ -101,8 +101,8 @@ class hebiHead extends BodyParts {
     endShape(CLOSE);
     //目
     stroke(0);
-    strokeWeight(2);
-    fill(0);
+    strokeWeight(5);
+    noFill();
     ellipse(30*cos(angle+PI*2/9)*reductionRate,-30*sin(angle+PI*2/9),10,10);
     ellipse(30*cos(angle+PI*16/9)*reductionRate,-30*sin(angle+PI*16/9),10,10);
     }else{
@@ -155,8 +155,8 @@ class hebiHead extends BodyParts {
     endShape(CLOSE);
     //目
     stroke(0);
-    strokeWeight(2);
-    fill(0);
+    strokeWeight(5);
+    noFill();
     ellipse(30*cos(angle-PI*2/9)*reductionRate,-30*sin(angle-PI*2/9),10,10);
     ellipse(30*cos(angle-PI*16/9)*reductionRate,-30*sin(angle-PI*16/9),10,10);
     }
