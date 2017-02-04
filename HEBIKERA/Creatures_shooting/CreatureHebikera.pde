@@ -1,9 +1,8 @@
 class CreatureHebikera extends Creature{
-  hebiHead hebi_head;
+  hebiHead head;
   
   CreatureHebikera(int num, hebiHead head){
     super(num, head);
-    hebi_head = head;
     bodies.add(head);
     for (int i = 0; i < num-1; i++){
       bodies.add(new hebiMiddle(head.position.x,head.position.y));
@@ -15,7 +14,7 @@ class CreatureHebikera extends Creature{
   
   void update(){
     super.update();
-    hebi_head.update();
+    head.update();
     //その他のBodyパーツ更新
     for (int i = 1; i < bodies.size(); i++){
       bodies.get(i).update(bodies.get(i-1));

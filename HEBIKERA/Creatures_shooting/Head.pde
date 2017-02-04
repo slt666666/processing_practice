@@ -3,8 +3,9 @@ class fishHead extends Head{
   fishHead(float x, float y, int num) {
     super(x, y, num);
   }
-  
+
   void display() {
+    super.display();
     angle = atan2(-velocity.y,velocity.x);
     reductionRate = map(abs(velocity.x),0,5,0,1);
     stroke(random(200));

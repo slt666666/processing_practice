@@ -1,7 +1,7 @@
 class Creature{
   ArrayList<BodyParts> bodies;
   
-  Creature(int num, BodyParts head){
+  Creature(int num, Head head){
     bodies = new ArrayList<BodyParts>();
   }
   

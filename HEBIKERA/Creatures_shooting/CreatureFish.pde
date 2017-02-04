@@ -1,9 +1,8 @@
 class CreatureFish extends Creature{
-  Head fish_head;
+  fishHead head;
   
-  CreatureFish(int num, Head head){
+  CreatureFish(int num, fishHead head){
     super(num, head);
-    fish_head = head;
     bodies.add(head);
     for (int i = 0; i < num-1; i++){
       bodies.add(new Middle(head.position.x,head.position.y));
@@ -13,7 +12,7 @@ class CreatureFish extends Creature{
   
   void update(){
     super.update();
-    fish_head.update();
+    head.update();
     //その他のBodyパーツ更新
     for (int i = 1; i < bodies.size(); i++){
       bodies.get(i).update(bodies.get(i-1));

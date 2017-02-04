@@ -3,7 +3,7 @@ ArrayList<Ball> balls;
 ArrayList<Bullet> bullets;
 
 void setup() {
-  size(960,540);
+  size(720,480);
   FishAndHebi = new Flock(10,2);
   balls = new ArrayList<Ball>();
   balls.add(new Ball());
@@ -31,7 +31,7 @@ void draw() {
 }
 
 void mousePressed(){
-   FishAndHebi.addFish();
+   FishAndHebi.addFish(5);
    FishAndHebi.addHebi();   
 }
 
