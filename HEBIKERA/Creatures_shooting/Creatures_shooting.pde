@@ -3,6 +3,7 @@ ArrayList<Ball> balls;
 ArrayList<Bullet> bullets;
 
 void setup() {
+  //fullScreen();
   size(720,480);
   FishAndHebi = new Flock(10,2);
   balls = new ArrayList<Ball>();

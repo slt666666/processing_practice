@@ -9,7 +9,7 @@ class Flock{
     }
     for (int i = 0; i < num_hebi; i++){
       hebiHead brain = new hebiHead(random(width), random(height), i+1);
-      creatures.add(new CreatureHebikera(6, brain));
+      creatures.add(new CreatureHebikera(4, brain));
     }
   }
   

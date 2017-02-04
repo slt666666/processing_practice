@@ -1,11 +1,13 @@
 class Ball {
  
   PVector position;
-  float dx = 4;
-  float dy = 3;
+  float dx;
+  float dy;
   
   Ball(){
     position = new PVector(random(width), random(height));
+    dx = 4;
+    dy = 3;
   }
   
   void move(){
