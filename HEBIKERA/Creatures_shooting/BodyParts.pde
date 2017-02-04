@@ -5,13 +5,12 @@ class BodyParts {
   float topspeed;
   float reductionRate;
   float angle;
-  
   boolean hit = false;
   
   BodyParts(float x, float y) {
     position = new PVector(x,y);
     velocity = new PVector(0,0);
-    topspeed = 5;
+    topspeed = 4;
   }
 
   void update(BodyParts target) {

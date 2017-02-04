@@ -1,18 +1,23 @@
 Flock FishAndHebi;
-Ball ball;
+ArrayList<Ball> balls;
 ArrayList<Bullet> bullets;
 
 void setup() {
   size(640,360);
-  FishAndHebi = new Flock(10,5);
-  ball = new Ball();
+  FishAndHebi = new Flock(10,2);
+  balls = new ArrayList<Ball>();
+  balls.add(new Ball());
+  balls.add(new Ball());
+  balls.add(new Ball());
   bullets = new ArrayList<Bullet>();
 }
 
 void draw() {
 
   background(220);
-  ball.move();
+  for (Ball b: balls){
+    b.move();
+  }
   FishAndHebi.deadCheck();
   FishAndHebi.update();
   FishAndHebi.display();
@@ -22,7 +27,7 @@ void draw() {
        bullets.remove(bullets.get(i));
      }
   }
-  text("Click to generate new Indoor fish", 0, height-10);
+  text("Click to generate new creature", 0, height-10);
 }
 
 void mousePressed(){
