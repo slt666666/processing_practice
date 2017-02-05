@@ -17,11 +17,12 @@ void setup() {
   dataSet.add(data);
 }
 void draw() {
+  background(0);
   if (k < 10000){
     for (int i=0;i<paths.length;i++) {
       PVector loc = paths[i].location;
       float diam = paths[i].diameter;
-      ellipse(loc.x, loc.y, diam, diam);
+      //ellipse(loc.x, loc.y, diam, diam);
       if (k < 10000){
         dataSet.get(treenum)[k*3] = loc.x;
         dataSet.get(treenum)[k*3+1] = loc.y;
@@ -29,6 +30,9 @@ void draw() {
       }
       paths[i].update();
       k += 1;
+    }
+    for (int j = 0;j < dataSet.get(treenum).length/3; j++){
+      ellipse(dataSet.get(treenum)[3*j],dataSet.get(treenum)[3*j+1],dataSet.get(treenum)[3*j+2],dataSet.get(treenum)[3*j+2]);
     }
   }else{
     background(0);
