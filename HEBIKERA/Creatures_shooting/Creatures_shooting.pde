@@ -5,6 +5,7 @@ ArrayList<Bullet> bullets;
 void setup() {
   //fullScreen();
   size(720,480);
+  background(220);
   FishAndHebi = new Flock(10,2);
   balls = new ArrayList<Ball>();
   balls.add(new Ball());
@@ -28,7 +29,6 @@ void draw() {
        bullets.remove(bullets.get(i));
      }
   }
-  fill(0);
   text("Click to generate new creature", 0, height-10);
 }
 
