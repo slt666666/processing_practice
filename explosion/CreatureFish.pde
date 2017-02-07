@@ -3,9 +3,9 @@ class CreatureFish extends Creature{
   CreatureFish(int num, fishHead head){
     super(num, head);
     for (int i = 0; i < num-1; i++){
-      bodies.add(new Middle(head.position.x,head.position.y));
+      bodies.add(new Middle(head.position.x,head.position.y,head.position.z));
     }
-    bodies.add(new Tail(head.position.x,head.position.y));
+    bodies.add(new Tail(head.position.x,head.position.y,head.position.z));
   }
   
   void update(){
@@ -28,7 +28,7 @@ class CreatureFish extends Creature{
     noFill();
     beginShape();
     for (int i = 1; i < bodies.size(); i++){
-      vertex(bodies.get(i).position.x, bodies.get(i).position.y);
+      vertex(bodies.get(i).position.x, bodies.get(i).position.y, bodies.get(i).position.z);
     }
     endShape();
   }

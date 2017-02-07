@@ -2,7 +2,7 @@ Flock fishes;
 ArrayList<Ball> balls;
 
 void setup(){
-  size(720,480,P3D);
+  size(720, 480, P3D);
   background(220);
   fishes = new Flock(5,2);
   balls = new ArrayList<Ball>();

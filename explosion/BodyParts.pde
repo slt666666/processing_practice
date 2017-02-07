@@ -7,9 +7,9 @@ class BodyParts {
   float angle;
   boolean hit = false;
   
-  BodyParts(float x, float y) {
-    position = new PVector(x,y);
-    velocity = new PVector(0,0);
+  BodyParts(float x, float y, float z) {
+    position = new PVector(x,y,z);
+    velocity = new PVector(0,0,0);
     topspeed = 4;
   }
 

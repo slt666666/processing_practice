@@ -1,13 +1,13 @@
 class Middle extends BodyParts {
 
-  Middle(float x, float y) {
-    super(x, y);
+  Middle(float x, float y, float z) {
+    super(x, y, z);
   }
 
   void display() {
     super.display();
     pushMatrix();
-    translate(position.x, position.y);
+    translate(position.x, position.y, position.z);
     beginShape();
     if(angle <= PI/2 && angle >= -PI/2){
       vertex(8*cos(angle)*reductionRate,-8*sin(angle));

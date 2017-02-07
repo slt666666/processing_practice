@@ -2,8 +2,8 @@ class Head extends BodyParts{
 
   int followNum;
   
-  Head(float x, float y, int num) {
-    super(x, y);
+  Head(float x, float y, float z, int num) {
+    super(x, y, z);
     followNum = num;
   }
   
@@ -18,7 +18,6 @@ class Head extends BodyParts{
   
   PVector follow() {
     PVector followPower = PVector.sub(balls.get(followNum).position,position);
-    println(followNum);
     followPower.setMag(0.2);
     followPower.limit(topspeed);
     return followPower;
@@ -55,7 +54,7 @@ class Head extends BodyParts{
     stroke(random(200));
     strokeWeight(2);
     pushMatrix();
-    translate(position.x, position.y);
+    translate(position.x, position.y, position.z);
     fill(random(200));
     beginShape();
     //右向き

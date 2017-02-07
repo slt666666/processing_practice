@@ -1,7 +1,7 @@
 class fishHead extends Head{
 
-  fishHead(float x, float y, int num) {
-    super(x, y, num);
+  fishHead(float x, float y, float z, int num) {
+    super(x, y, z, num);
   }
   
   void display() {
@@ -10,7 +10,7 @@ class fishHead extends Head{
     stroke(random(200));
     strokeWeight(2);
     pushMatrix();
-    translate(position.x, position.y);
+    translate(position.x, position.y, position.z);
     fill(random(200));
     beginShape();
     //右向き
@@ -33,7 +33,7 @@ class fishHead extends Head{
     stroke(0);
     strokeWeight(2);
     fill(0);
-    ellipse(0,0,4*reductionRate,4);
+    sphere(4*reductionRate);
     popMatrix();
   }
 
