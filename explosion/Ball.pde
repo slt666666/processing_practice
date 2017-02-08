@@ -6,10 +6,10 @@ class Ball {
   float dz;
   
   Ball(){
-    position = new PVector(width/2, height/2, random(-300,300));
-    dx = 0;
-    dy = 0;
-    dz = 6;
+    position = new PVector(width/2, height/2, -150);
+    dx = random(-10,10);
+    dy = random(1,6);
+    dz = random(-3,3);
   }
   
   void move(){
@@ -25,11 +25,17 @@ class Ball {
     position.x += dx;
     position.y += dy;
     position.z += dz;
-  
-    if( position.y > height || position.y < 0 )  dy = -dy;
-    if( position.x > width || position.x < 0 )  dx = -dx;
-    if( position.z < -300 || position.z > 300 ) dz = -dz;
+    
+    if ( position.x > width || position.x < 0 ) dx = -dx;
+    if ( position.z > 0 || position.z < -300 ) dz = -dz;
   }
   
+  boolean outSide(){
+    if( position.y > height || position.y < 0 ) {
+       return true;
+    }else{
+       return false;
+    }
+  }
   
 }
