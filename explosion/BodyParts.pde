@@ -48,7 +48,7 @@ class BodyParts {
   
   boolean collision(){
 
-    if (position.y < 0 || position.y > height){
+    if (position.y > height){
       return true;
     }else{
       return false;

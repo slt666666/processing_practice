@@ -5,7 +5,7 @@ class Flock{
   Flock(int num_fish, int num_hebi){
     creatures = new ArrayList<Creature>();
     for (int i = 0; i < num_fish; i++){
-      fishHead brain = new fishHead(random(width), random(height), random(-300), 0);
+      fishHead brain = new fishHead(random(width), 0, random(-300,0), 0);
       creatures.add(new CreatureFish(6, brain));
     }
     //for (int i = 0; i < num_hebi; i++){
@@ -16,7 +16,7 @@ class Flock{
   
   void addFish(int num){
     for (int i = 0; i < num; i++){
-      fishHead brain = new fishHead(random(width), random(height), random(-300), subNum);
+      fishHead brain = new fishHead(random(width), 0, random(-300,0), subNum);
       creatures.add(new CreatureFish(6, brain));
     }
     subNum += 1;

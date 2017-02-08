@@ -6,10 +6,10 @@ class Ball {
   float dz;
   
   Ball(){
-    position = new PVector(width/2, height/2, -150);
-    dx = random(-6,6);
-    dy = random(-6,6);
-    dz = random(-6,6);
+    position = new PVector(width/2, 0, -300);
+    dx = random(-3,3);
+    dy = random(0.5,2);
+    dz = random(-3,3);
   }
   
   void move(){
@@ -19,7 +19,7 @@ class Ball {
     //ellipse( position.x, position.y, 10, 10 );
     pushMatrix();
     translate(position.x, position.y, position.z);
-    sphere(map(position.z,-300,300,1,20));
+    //sphere(map(position.z,-300,300,1,20));
     popMatrix();
     
     position.x += dx;
@@ -28,14 +28,6 @@ class Ball {
     
     if ( position.x > width || position.x < 0 ) dx = -dx;
     if ( position.z > 0 || position.z < -300 ) dz = -dz;
-  }
-  
-  boolean outSide(){
-    if( position.y > height+2000 ) {
-       return true;
-    }else{
-       return false;
-    }
   }
   
 }
