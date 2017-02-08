@@ -7,9 +7,9 @@ class Ball {
   
   Ball(){
     position = new PVector(width/2, height/2, -150);
-    dx = random(-10,10);
-    dy = random(1,6);
-    dz = random(-3,3);
+    dx = random(-6,6);
+    dy = random(-6,6);
+    dz = random(-6,6);
   }
   
   void move(){
@@ -31,7 +31,7 @@ class Ball {
   }
   
   boolean outSide(){
-    if( position.y > height || position.y < 0 ) {
+    if( position.y > height+2000 ) {
        return true;
     }else{
        return false;

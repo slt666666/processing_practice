@@ -1,13 +1,16 @@
 class Head extends BodyParts{
 
   int followNum;
+  Ball ball;
   
   Head(float x, float y, float z, int num) {
     super(x, y, z);
     followNum = num;
+    ball = new Ball();
   }
   
   void update() {
+    ball.move();
     PVector followP = follow();
     PVector separateP = separate();
     velocity.add(followP);
@@ -17,7 +20,7 @@ class Head extends BodyParts{
   }
   
   PVector follow() {
-    PVector followPower = PVector.sub(balls.get(followNum).position,position);
+    PVector followPower = PVector.sub(ball.position,position);
     followPower.setMag(0.2);
     followPower.limit(topspeed);
     return followPower;

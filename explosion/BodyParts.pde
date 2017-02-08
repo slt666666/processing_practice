@@ -46,16 +46,13 @@ class BodyParts {
     
   }
   
-  boolean collision(ArrayList<Creature> creatures){
-    for (int i = creatures.size()-1; i >= 0; i--){
-      if (abs(position.x-creatures.get(i).bodies.get(0).position.x) > 0
-      && abs(position.x-creatures.get(i).bodies.get(0).position.x) < 10 
-      && abs(position.y-creatures.get(i).bodies.get(0).position.y) < 10
-      && abs(position.y-creatures.get(i).bodies.get(0).position.y) > 0){
-        return true;
-      }
+  boolean collision(){
+
+    if (position.y < 0 || position.y > height){
+      return true;
+    }else{
+      return false;
     }
-    return false;
   }
 
 }

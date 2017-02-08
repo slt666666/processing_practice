@@ -43,7 +43,7 @@ class Flock{
   
   void deadCheck(){
     for (int i = creatures.size()-1; i >= 0; i--){
-      if(creatures.get(i).bodies.get(0).collision(creatures)){
+      if(creatures.get(i).bodies.get(0).collision()){
         creatures.remove(creatures.get(i));
       }
     }
