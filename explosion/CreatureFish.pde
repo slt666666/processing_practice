@@ -3,9 +3,9 @@ class CreatureFish extends Creature{
   CreatureFish(int num, fishHead head){
     super(num, head);
     for (int i = 0; i < num-1; i++){
-      bodies.add(new Middle(head.position.x,head.position.y,head.position.z));
+      bodies.add(new Middle(head.position.x,head.position.y,head.position.z, random(255)));
     }
-    bodies.add(new Tail(head.position.x,head.position.y,head.position.z));
+    bodies.add(new Tail(head.position.x,head.position.y,head.position.z, random(255)));
   }
   
   void update(){

@@ -1,7 +1,7 @@
 class Tail extends BodyParts{
   
-  Tail(float x, float y, float z){
-    super(x, y, z);
+  Tail(float x, float y, float z, float col){
+    super(x, y, z, col);
   }
   
   void display() {

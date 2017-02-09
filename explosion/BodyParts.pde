@@ -5,11 +5,14 @@ class BodyParts {
   float topspeed;
   float reductionRate;
   float angle;
+  float colNum;
+  
   boolean hit = false;
   
-  BodyParts(float x, float y, float z) {
+  BodyParts(float x, float y, float z, float col) {
     position = new PVector(x,y,z);
     velocity = new PVector(0,0,0);
+    colNum = col;
     topspeed = 4;
   }
 
@@ -40,9 +43,9 @@ class BodyParts {
     }else{
       reductionRate = map(mapAngle,0,PI,1,0);
     }
-    stroke(random(200));
+    stroke(0,colNum,255);
     strokeWeight(2);
-    fill(random(200));
+    fill(0,colNum,255);
     
   }
   

@@ -3,7 +3,7 @@ Flock fishes;
 
 void setup(){
   size(720, 480, P3D);
-  background(220);
+  background(0);
   fishes = new Flock(5,2);
   //balls = new ArrayList<Ball>();
   //balls.add(new Ball());
@@ -11,7 +11,14 @@ void setup(){
 
 void draw() {
 
-  background(220);
+  //background(0);
+  fill(0,0,0,10);
+  beginShape();
+  vertex(-width*2,height*2,-400);
+  vertex(-width*2,-height*2,-400);
+  vertex(width*2,-height*2,-400);  
+  vertex(width*2,height*2,-400);
+  endShape(CLOSE);
   //if (balls.size() > 0) {
   //  for (int i = 0; i < balls.size(); i++){
   //    balls.get(i).move();
@@ -24,6 +31,7 @@ void draw() {
   fishes.update();
   fishes.display();
   
+  stroke(255);
   beginShape();
   vertex(0,height,0);
   vertex(width,height,0);

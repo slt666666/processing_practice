@@ -1,17 +1,17 @@
 class fishHead extends Head{
 
-  fishHead(float x, float y, float z, int num) {
-    super(x, y, z, num);
+  fishHead(float x, float y, float z, int num, float col) {
+    super(x, y, z, num, col);
   }
   
   void display() {
     angle = atan2(-velocity.y,velocity.x);
     reductionRate = map(abs(velocity.x),0,5,0,1);
-    stroke(random(200));
+    stroke(0,colNum,255);
     strokeWeight(2);
     pushMatrix();
     translate(position.x, position.y, position.z);
-    fill(random(200));
+    fill(0,colNum,255);
     beginShape();
     //右向き
     if(angle <= PI/2 && angle >= -PI/2){

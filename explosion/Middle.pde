@@ -1,7 +1,7 @@
 class Middle extends BodyParts {
 
-  Middle(float x, float y, float z) {
-    super(x, y, z);
+  Middle(float x, float y, float z, float col) {
+    super(x, y, z, col);
   }
 
   void display() {

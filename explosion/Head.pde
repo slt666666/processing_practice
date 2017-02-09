@@ -3,8 +3,8 @@ class Head extends BodyParts{
   int followNum;
   Ball ball;
   
-  Head(float x, float y, float z, int num) {
-    super(x, y, z);
+  Head(float x, float y, float z, int num, float col) {
+    super(x, y, z, col);
     followNum = num;
     ball = new Ball();
   }
@@ -54,11 +54,11 @@ class Head extends BodyParts{
   void display() {
     angle = atan2(-velocity.y,velocity.x);
     reductionRate = map(abs(velocity.x),0,5,0,1);
-    stroke(random(200));
+    stroke(255,colNum,0);
     strokeWeight(2);
     pushMatrix();
     translate(position.x, position.y, position.z);
-    fill(random(200));
+    fill(255,colNum,0);
     beginShape();
     //右向き
     if(angle <= PI/2 && angle >= -PI/2){
