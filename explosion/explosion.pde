@@ -1,7 +1,6 @@
 Flock fishes;
 pathfinder[] paths;
 
-
 void setup(){
   size(720, 480, P3D);
   background(0);
@@ -42,7 +41,7 @@ void draw() {
   for (int i=0;i<paths.length;i++) {
     PVector loc = paths[i].location;
     float diam = paths[i].diameter;
-    if (diam > 0.5){
+    if (diam > 1){
       pushMatrix();
       translate(0,0,paths[i].zPos);
       fill((paths[i].colNum),255,255);
