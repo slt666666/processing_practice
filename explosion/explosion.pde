@@ -31,12 +31,12 @@ void draw() {
   vertex(0,height,-300);
   endShape(CLOSE);
   
-  beginShape();
-  vertex(0,0,0);
-  vertex(width,0,0);
-  vertex(width,0,-300);  
-  vertex(0,0,-300);
-  endShape(CLOSE);
+  //beginShape();
+  //vertex(0,0,0);
+  //vertex(width,0,0);
+  //vertex(width,0,-300);  
+  //vertex(0,0,-300);
+  //endShape(CLOSE);
   
   for (int i=0;i<paths.length;i++) {
     PVector loc = paths[i].location;
@@ -50,6 +50,10 @@ void draw() {
       paths[i].update();
       popMatrix();
     }
+  }
+  
+  if (fishes.creatures.size() < 5) {
+    fishes.addFish(1);
   }
 }
 
