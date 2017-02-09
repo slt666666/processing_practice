@@ -16,7 +16,6 @@ class Ball {
   
     stroke( 0, 0, 255, 100 );
     fill( 0, 255, 255, 100 );
-    //ellipse( position.x, position.y, 10, 10 );
     pushMatrix();
     translate(position.x, position.y, position.z);
     //sphere(map(position.z,-300,300,1,20));

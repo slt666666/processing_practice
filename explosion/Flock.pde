@@ -44,6 +44,8 @@ class Flock{
   void deadCheck(){
     for (int i = creatures.size()-1; i >= 0; i--){
       if(creatures.get(i).bodies.get(0).collision()){
+        Creature creature = creatures.get(i);
+        paths[0] = new pathfinder(creature.brain.position.x,creature.brain.position.y,creature.brain.position.z);
         creatures.remove(creatures.get(i));
       }
     }

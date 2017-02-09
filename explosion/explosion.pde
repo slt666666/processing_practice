@@ -1,17 +1,16 @@
 Flock fishes;
-//ArrayList<Ball> balls;
+pathfinder[] paths;
 
 void setup(){
   size(720, 480, P3D);
   background(0);
   fishes = new Flock(5,2);
-  //balls = new ArrayList<Ball>();
-  //balls.add(new Ball());
+  paths = new pathfinder[1];
+  paths[0] = new pathfinder(width/2, height, -150);
 }
 
 void draw() {
 
-  //background(0);
   fill(0,0,0,10);
   beginShape();
   vertex(-width*2,height*2,-400);
@@ -19,14 +18,7 @@ void draw() {
   vertex(width*2,-height*2,-400);  
   vertex(width*2,height*2,-400);
   endShape(CLOSE);
-  //if (balls.size() > 0) {
-  //  for (int i = 0; i < balls.size(); i++){
-  //    balls.get(i).move();
-  //    if (balls.get(i).outSide()){
-  //      balls.remove(balls.get(i));
-  //    }
-  //  }
-  //}
+
   fishes.deadCheck();
   fishes.update();
   fishes.display();
@@ -45,10 +37,18 @@ void draw() {
   vertex(width,0,-300);  
   vertex(0,0,-300);
   endShape(CLOSE);
-
+  
+  for (int i=0;i<paths.length;i++) {
+    PVector loc = paths[i].location;
+    float diam = paths[i].diameter;
+    pushMatrix();
+    translate(0,0,paths[i].zPos);
+    ellipse(loc.x, loc.y, diam, diam);
+    popMatrix();
+    paths[i].update();
+  }
 }
 
 void mousePressed(){
-   //balls.add(new Ball());
    fishes.addFish(5);  
 }
