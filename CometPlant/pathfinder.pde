@@ -24,7 +24,7 @@ class pathfinder {
    }
    
    void update(){
-     if ( diameter > 0.5 ) {
+     if ( diameter > 0.4 ) {
        location.add(velocity);
        PVector bump = new PVector(random(-1, 1), random(-1, 1), 0);
        bump.mult(0.1);

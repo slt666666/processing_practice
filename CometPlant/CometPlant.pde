@@ -2,16 +2,16 @@ Flock fishes;
 pathfinder[] paths;
 
 void setup(){
-  size(720, 480, P3D);
+  fullScreen(P3D);
   background(0);
-  fishes = new Flock(5,2);
+  fishes = new Flock(10,0);
   paths = new pathfinder[1];
   paths[0] = new pathfinder(width/2, height, -150);
 }
 
 void draw() {
   
-  fill(0,0,0,5);
+  fill(0,0,0,8);
   beginShape();
   vertex(-width*2,height*2,-400);
   vertex(-width*2,-height*2,-400);
@@ -52,7 +52,7 @@ void draw() {
     }
   }
   
-  if (fishes.creatures.size() < 5) {
+  if (fishes.creatures.size() < 10) {
     fishes.addFish(1);
   }
 }

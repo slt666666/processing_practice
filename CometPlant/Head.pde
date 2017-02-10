@@ -3,9 +3,8 @@ class Head extends BodyParts{
   int followNum;
   Ball ball;
   
-  Head(float x, float y, float z, int num, float col) {
+  Head(float x, float y, float z, float col) {
     super(x, y, z, col);
-    followNum = num;
     ball = new Ball();
   }
   

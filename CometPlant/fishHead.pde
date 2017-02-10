@@ -1,12 +1,12 @@
 class fishHead extends Head{
 
-  fishHead(float x, float y, float z, int num, float col) {
-    super(x, y, z, num, col);
+  fishHead(float x, float y, float z, float col) {
+    super(x, y, z, col);
   }
   
   void display() {
     angle = atan2(-velocity.y,velocity.x);
-    reductionRate = map(abs(velocity.x),0,5,0,1);
+    reductionRate = map(abs(velocity.x),0,4,0,1);
     stroke(0,colNum,255);
     strokeWeight(2);
     pushMatrix();
