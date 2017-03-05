@@ -26,13 +26,24 @@ class Icon {
   }
   
   void display() {
-    fill(200);
-    stroke(200);
-    ellipse(positionX,positionY,40,40);
-    strokeWeight(2);
-    stroke(0);
-    ellipse(positionX,positionY,38,38);
-    tint(0,100);
-    image(img, positionX-15, positionY-15, 30, 30);
+    if (dist(mouseX,mouseY,positionX,positionY) < 20) {
+      fill(255,183,76);
+      stroke(255,183,76);
+      ellipse(positionX,positionY,40,40);
+      strokeWeight(2);
+      stroke(0);
+      ellipse(positionX,positionY,38,38);
+      noTint();
+      image(img, positionX-13, positionY-13, 26, 26);
+    }else{
+      fill(200);
+      stroke(200);
+      ellipse(positionX,positionY,40,40);
+      strokeWeight(2);
+      stroke(0);
+      ellipse(positionX,positionY,38,38);
+      tint(0,100);
+      image(img, positionX-13, positionY-13, 26, 26);
+    }
   }
 }
