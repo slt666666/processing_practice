@@ -17,9 +17,9 @@ class Icon {
   void appear() {
     
     stroke(200);
-    ellipse(positionX,positionY-60+slide,40,40);
+    ellipse(positionX,positionY-50+slide,40,40);
     slide += 10;
-    if (slide > 59){
+    if (slide > 49){
       appeared = true; 
     }
     
