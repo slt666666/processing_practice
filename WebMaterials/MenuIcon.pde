@@ -3,6 +3,7 @@ class MenuIcon {
   float positionX;
   float positionY;
   boolean appeared;
+  int selectNum;
   Icon[] iconSet;
   
   MenuIcon() {
@@ -16,7 +17,14 @@ class MenuIcon {
   }
   
   boolean insideCheck() {
-    return (iconSet[0].insideCheck() || iconSet[1].insideCheck() ||iconSet[2].insideCheck() ||iconSet[3].insideCheck());
+    
+    for (int j = 0; j < 4; j++) {
+      if (iconSet[j].insideCheck()){
+        selectNum = j;
+        return true;
+      }
+    }
+    return false;
   }
   
   void display() {
