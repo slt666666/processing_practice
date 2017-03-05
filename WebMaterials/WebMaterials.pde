@@ -4,6 +4,7 @@ DetailInfo info;
 boolean menuIsset;
 boolean detailIsset;
 boolean infoIsset;
+float infoSlide;
 PFont font;
 
 void setup() {
@@ -14,6 +15,7 @@ void setup() {
   menuIsset = false;
   detailIsset = false;
   infoIsset = false;
+  infoSlide = 0;
   smooth();
 }
  
@@ -27,10 +29,14 @@ void draw() {
   }
   if (infoIsset) {
     info.display(); 
+  }else{
+    infoSlide = 0;
   }
   fill(220,150);
   stroke(220, 150);
-  text("Welcome to SandBox !!!",0, height/2);
+  textSize(48);
+  textAlign(CENTER);
+  text("Welcome to SandBox !!!",0, height/2, width,50);
 }
 
 void mousePressed(){
@@ -42,27 +48,21 @@ void mousePressed(){
       //メニュークリック時
       if (detailIsset){
         if (detail.insideCheck()){
-          int selectMenuNum = detail.selectNum;
-          int infoNum = detail.infoNum;
-          info = new DetailInfo(selectMenuNum,infoNum);
-          infoIsset = true;
+          //メニュークリックした時の挙動はここ
         }else{
           menu = new MenuIcon();
           menuIsset = true;
           detailIsset = false;
-          infoIsset = false; 
         }
       }else{
         menu = new MenuIcon();
         menuIsset = true;
         detailIsset = false;
-        infoIsset = false; 
       }
     }else{
       // メニュー広げる処理
       int selectNum = menu.selectNum;
       detail = new MenuDetail(menu.iconSet[selectNum].positionX,menu.iconSet[selectNum].positionY,selectNum);
-      infoIsset = false;
       detailIsset = true;
     }
   }

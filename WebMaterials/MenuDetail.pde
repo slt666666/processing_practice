@@ -13,7 +13,8 @@ class MenuDetail {
     selectNum = selectNum;
     details = new Detail[2];
     details[0] = new Detail(x + 52, y + 20, selectNum, 0);
-    details[1] = new Detail(x + 52, y - 25 ,selectNum, 1);
+    details[1] = new Detail(x + 52, y - 26, selectNum, 1);
+
   }
   
   boolean insideCheck() {
@@ -32,6 +33,7 @@ class MenuDetail {
     triangle(positionX, positionY, positionX+20, positionY+10, positionX+20, positionY-10);
     fill(0,150);
     ellipse(positionX+15,positionY,2,2);
+    infoIsset = false;
     details[0].display();
     details[1].display();
   }

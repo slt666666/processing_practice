@@ -2,6 +2,7 @@ class Icon {
  
   float positionX;
   float positionY;
+  int selectNum;
   int slide;
   boolean appeared;
   PImage img;
@@ -10,6 +11,7 @@ class Icon {
     positionX = x;
     positionY = y;
     slide = 1;
+    selectNum = menuNum;
     String imageUrl = ("menu"+menuNum+".png");
     img = loadImage(imageUrl);
     appeared = false;
@@ -50,5 +52,16 @@ class Icon {
       tint(0,100);
       image(img, positionX-13, positionY-13, 26, 26);
     }
+  }
+  
+  void displaySelect(){
+      fill(255,183,76,150);
+      stroke(255,183,76,150);
+      ellipse(positionX,positionY,40,40);
+      strokeWeight(2);
+      stroke(0,150);
+      ellipse(positionX,positionY,38,38);
+      noTint();
+      image(img, positionX-13, positionY-13, 26, 26); 
   }
 }

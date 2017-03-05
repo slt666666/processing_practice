@@ -8,11 +8,11 @@ class Detail {
   boolean appeared;
   PImage img;
 
-  Detail(float x, float y, int selectNum, int detailNum) {
+  Detail(float x, float y, int select, int detail) {
     positionX = x;
     positionY = y;
-    selectNum = selectNum;
-    detailNum = detailNum;
+    selectNum = select;
+    detailNum = detail;
     slide = 0;
     String url = ("setting1"+".png");
     img = loadImage(url);
@@ -24,6 +24,7 @@ class Detail {
   }
   
   void display() {
+    menu.iconSet[selectNum].displaySelect();
     
     if (!appeared) {
       
@@ -41,6 +42,7 @@ class Detail {
         image(img, positionX+8, positionY-30, 20, 20);
         fill(0,150);
         textSize(30);
+        textAlign(LEFT);
         text("aaaa",positionX+40,positionY-12);
       }else{
         fill(255,183,76,150);
@@ -49,7 +51,10 @@ class Detail {
         image(img, positionX+8, positionY-30, 20, 20);
         fill(255,150);
         textSize(30);
+        textAlign(LEFT);
         text("aaaa",positionX+40,positionY-12);
+        info = new DetailInfo(selectNum,detailNum);
+        infoIsset = true;
       }
     }
   }
