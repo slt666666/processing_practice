@@ -16,6 +16,13 @@ void draw() {
 }
 
 void mousePressed(){
-  menu = new MenuIcon();
-  menuIsset = true;
+  if (!menuIsset){
+    menu = new MenuIcon();
+    menuIsset = true;
+  }else{
+    if (!menu.insideCheck()) {
+      menu = new MenuIcon();
+      menuIsset = true;
+    }
+  }
 }

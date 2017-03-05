@@ -14,6 +14,10 @@ class Icon {
     appeared = false;
   }
   
+  boolean insideCheck() {
+    return (dist(mouseX,mouseY,positionX,positionY) < 20);
+  }
+  
   void appear() {
     
     stroke(200);
@@ -26,7 +30,7 @@ class Icon {
   }
   
   void display() {
-    if (dist(mouseX,mouseY,positionX,positionY) < 20) {
+    if (insideCheck()) {
       fill(255,183,76);
       stroke(255,183,76);
       ellipse(positionX,positionY,40,40);

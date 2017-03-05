@@ -15,6 +15,10 @@ class MenuIcon {
     appeared = false;
   }
   
+  boolean insideCheck() {
+    return (iconSet[0].insideCheck() || iconSet[1].insideCheck() ||iconSet[2].insideCheck() ||iconSet[3].insideCheck());
+  }
+  
   void display() {
     iconSet[0].appeared = true;
     for (int i = 3; i > 0; i--){
