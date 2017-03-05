@@ -39,11 +39,17 @@ class Detail {
         rect(positionX, positionY, 100, -42);
         tint(0,100);
         image(img, positionX+8, positionY-30, 20, 20);
+        fill(0,150);
+        textSize(30);
+        text("aaaa",positionX+40,positionY-12);
       }else{
         fill(255,183,76,150);
         rect(positionX, positionY, 100, -42);
         noTint();
         image(img, positionX+8, positionY-30, 20, 20);
+        fill(255,150);
+        textSize(30);
+        text("aaaa",positionX+40,positionY-12);
       }
     }
   }

@@ -3,18 +3,27 @@ class MenuDetail {
   Detail[] details;
   float positionX;
   float positionY;
+  int selectNum;
+  int infoNum;
 
   MenuDetail(float x, float y, int selectNum) {
     
     positionX = x + 30;
     positionY = y;
+    selectNum = selectNum;
     details = new Detail[2];
     details[0] = new Detail(x + 52, y + 20, selectNum, 0);
     details[1] = new Detail(x + 52, y - 25 ,selectNum, 1);
   }
   
   boolean insideCheck() {
-    return true;
+    for (int i = 0; i < 2; i++) {
+      if (details[i].insideCheck()){
+        infoNum = i;
+        return true;
+      }
+    }
+    return false;
   }
   
   void display() {
