@@ -1,17 +1,13 @@
 class MenuIcon {
  
-  float positionX;
-  float positionY;
   boolean appeared;
   int selectNum;
   Icon[] iconSet;
   
   MenuIcon() {
-    positionX = mouseX;
-    positionY = mouseY;
     iconSet = new Icon[4];
     for (int i = 0; i < 4; i++){
-      iconSet[i] = new Icon(positionX,positionY+i*50);
+      iconSet[i] = new Icon(mouseX,mouseY+i*50,i);
     }
     appeared = false;
   }

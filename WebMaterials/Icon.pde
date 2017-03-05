@@ -6,11 +6,12 @@ class Icon {
   boolean appeared;
   PImage img;
 
-  Icon(float x, float y) {
+  Icon(float x, float y, int menuNum) {
     positionX = x;
     positionY = y;
     slide = 1;
-    img = loadImage("setting1.png");
+    String imageUrl = ("menu"+menuNum+".png");
+    img = loadImage(imageUrl);
     appeared = false;
   }
   
@@ -31,20 +32,20 @@ class Icon {
   
   void display() {
     if (insideCheck()) {
-      fill(255,183,76);
-      stroke(255,183,76);
+      fill(255,183,76,150);
+      stroke(255,183,76,150);
       ellipse(positionX,positionY,40,40);
       strokeWeight(2);
-      stroke(0);
+      stroke(0,150);
       ellipse(positionX,positionY,38,38);
       noTint();
       image(img, positionX-13, positionY-13, 26, 26);
     }else{
-      fill(200);
-      stroke(200);
+      fill(200,150);
+      stroke(200,150);
       ellipse(positionX,positionY,40,40);
       strokeWeight(2);
-      stroke(0);
+      stroke(0,150);
       ellipse(positionX,positionY,38,38);
       tint(0,100);
       image(img, positionX-13, positionY-13, 26, 26);
