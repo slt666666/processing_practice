@@ -14,6 +14,8 @@ class DetailInfo{
   
   void display() {
       fill(255,150);
+      stroke(0,150);
+      strokeWeight(2);
       triangle(positionX-20, positionY+21, positionX, positionY+31, positionX, positionY+11);
       fill(0,150);
       ellipse(positionX-5,positionY+21,2,2);

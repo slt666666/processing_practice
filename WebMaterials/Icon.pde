@@ -64,4 +64,8 @@ class Icon {
       noTint();
       image(img, positionX-13, positionY-13, 26, 26); 
   }
+  
+  void displayUser(){
+    
+  }
 }

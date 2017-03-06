@@ -30,7 +30,7 @@ void draw() {
   if (infoIsset) {
     info.display(); 
   }else{
-    infoSlide = 0;
+    infoSlide = 0; 
   }
   fill(220,150);
   stroke(220, 150);
