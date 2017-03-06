@@ -5,7 +5,7 @@ class MenuDetail {
   float positionY;
   int menuNum;
   int infoNum;
-
+  
   MenuDetail(float x, float y, int selectNum) {
     
     positionX = x + 30;
@@ -50,6 +50,9 @@ class MenuDetail {
       textSize(36);
       textAlign(CENTER);
       text("Kiyushito",positionX-180,positionY-65);
+      tint(0,100);
+      image(user, positionX-260, positionY-40, 160, 160);
+      
     }
   }
 }
