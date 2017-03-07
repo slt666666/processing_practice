@@ -71,9 +71,10 @@ class MenuDetail {
       fill(70,150);
       stroke(70,150);
       line(positionX-100,positionY-60,positionX-260,positionY-60);
+      textFont(font);
       textSize(36);
       textAlign(CENTER);
-      text("Kiyushito",positionX-180,positionY-65);
+      text("Toshiyuki",positionX-180,positionY-65);
       tint(0,100);
       image(user, positionX-260, positionY-40, 160, 160);
       

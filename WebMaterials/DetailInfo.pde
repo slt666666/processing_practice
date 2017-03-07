@@ -22,6 +22,9 @@ class DetailInfo{
     if (infoSlide > 0.9) { 
       fill(255,150);
       rect(positionX,positionY,200,300);
+      textFont(font2);
+      fill(0);
+      text("このHPはDjangoで作られている",positionX,positionY,200,20);
     }else{
       fill(255,150);
       rect(positionX,positionY,200*infoSlide,300*infoSlide);

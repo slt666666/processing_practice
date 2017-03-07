@@ -7,6 +7,7 @@ boolean infoIsset;
 float infoSlide;
 
 PFont font;
+PFont font2;
 PImage user;
 PImage menu0_0, menu0_1, menu0_2, menu1_0, menu1_1, menu2_0, menu3_0, menu3_1;
 String content0_0,content0_1,content0_2,content1_0,content1_1,content2_0,content3_0,content3_1;
@@ -53,6 +54,7 @@ void setup() {
   background(0);
   size(640, 426);
   font = createFont("sword_art_online_font_by_darkblackswords-d5nssbp.otf",48);
+  font2 = createFont("Sarif",15);
   textFont(font);
   menuIsset = false;
   detailIsset = false;
@@ -78,6 +80,7 @@ void draw() {
   stroke(220, 150);
   textSize(48);
   textAlign(CENTER);
+  textFont(font);
   text("Welcome to SandBox !!!",0, height/2, width,50);
 }
 

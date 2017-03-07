@@ -45,6 +45,7 @@ class Detail {
         tint(0,100);
         image(img, positionX+8, positionY-32, 24, 24);
         fill(0,150);
+        textFont(font);
         textSize(20);
         textAlign(CENTER);
         text(content,positionX+40,positionY-29,90,42);
@@ -54,11 +55,14 @@ class Detail {
         noTint();
         image(img, positionX+8, positionY-32, 24, 24);
         fill(255,150);
+        textFont(font);
         textSize(20);
         textAlign(CENTER);
         text(content,positionX+40,positionY-29,90,42);
-        info = new DetailInfo(selectNum,detailNum);
-        infoIsset = true;
+        if (selectNum == 0 || selectNum == 1 || (selectNum == 3 && detailNum == 0)){ 
+          info = new DetailInfo(selectNum,detailNum);
+          infoIsset = true;
+        }
       }
     }
   }
