@@ -54,7 +54,7 @@ void setup() {
   background(0);
   size(640, 426);
   font = createFont("sword_art_online_font_by_darkblackswords-d5nssbp.otf",48);
-  font2 = createFont("Sarif",15);
+  font2 = createFont("Sarif",12);
   textFont(font);
   menuIsset = false;
   detailIsset = false;

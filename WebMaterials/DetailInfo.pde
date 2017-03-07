@@ -24,7 +24,7 @@ class DetailInfo{
       rect(positionX,positionY,200,300);
       textFont(font2);
       fill(0);
-      text("このHPはDjangoで作られている",positionX,positionY,200,20);
+      text("このHPはDjangoで作られている。デザインは主にProcessing.jsで行っており、ツーリングのルート検索はleaf-let.jsの地図上にjavascriptで描写や写真表示を加えてみた。",positionX,positionY,200,300);
     }else{
       fill(255,150);
       rect(positionX,positionY,200*infoSlide,300*infoSlide);
