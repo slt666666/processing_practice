@@ -5,20 +5,43 @@ class MenuDetail {
   float positionY;
   int menuNum;
   int infoNum;
+  int contentNum;
   
   MenuDetail(float x, float y, int selectNum) {
-    
     positionX = x + 30;
     positionY = y;
     menuNum = selectNum;
-    details = new Detail[2];
-    details[0] = new Detail(x + 52, y + 20, selectNum, 0);
-    details[1] = new Detail(x + 52, y - 26, selectNum, 1);
+    contentNum = getContentNum(menuNum);
+    details = new Detail[contentNum];
+    for (int i = 0; i < contentNum; i++){
+      details[i] = new Detail(x + 52, y + 20 - i * 46, selectNum, i);
+    }
 
   }
   
+  int getContentNum(int select) {
+    
+    int returnNum = 0;
+    switch(select) {
+      case 0:
+        returnNum = 3;
+        break;
+      case 1:
+        returnNum = 2;
+        break;
+      case 2:
+        returnNum = 1;
+        break;
+      case 3:
+        returnNum = 2;
+        break;
+    }
+    return returnNum;
+    
+  }
+  
   boolean insideCheck() {
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < contentNum; i++) {
       if (details[i].insideCheck()){
         infoNum = i;
         return true;
@@ -35,8 +58,9 @@ class MenuDetail {
     fill(0,150);
     ellipse(positionX+15,positionY,2,2);
     infoIsset = false;
-    details[0].display();
-    details[1].display();
+    for (int j = 0; j < contentNum; j++){
+      details[j].display(); 
+    }
     
     if (menuNum == 0){
       

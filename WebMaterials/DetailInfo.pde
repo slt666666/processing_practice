@@ -6,7 +6,7 @@ class DetailInfo{
   int infoNum;
   
   DetailInfo(int select, int info){
-    positionX = detail.details[info].positionX + 120;
+    positionX = detail.details[info].positionX + 170;
     positionY = detail.details[info].positionY - 42;
     selectNum = select;
     infoNum = info;
