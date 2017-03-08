@@ -23,11 +23,12 @@ class Icon {
   
   void appear() {
     
-    stroke(200);
+    noStroke();
+    fill(200,150);
     ellipse(positionX,positionY-50+slide,40,40);
-    slide += 10;
+    slide += 15;
     if (slide > 49){
-      appeared = true; 
+      appeared = true;
     }
     
   }

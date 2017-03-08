@@ -110,8 +110,17 @@ class MenuDetail {
       fill(70,150);
       textAlign(RIGHT);
       if (underSlide >= 80){
+        ellipse(positionX-260,positionY-20,16,16);
+        strokeWeight(2);
+        stroke(70,150);
+        line(positionX-260,positionY-12,positionX-260,positionY+8);
+        line(positionX-260,positionY+8,positionX-220,positionY+30);
+        text("SV400",positionX-200,positionY-12);
         text("[ slt666666 ]",positionX-180,positionY+160);
-        text("SNS icon ... etc",positionX-150,positionY+190);
+        noTint();
+        image(github,positionX-260,positionY+165,32,32);
+        image(twitter,positionX-200,positionY+165,32,32);
+        image(facebook,positionX-140,positionY+165,32,32);
       }
     }
   }

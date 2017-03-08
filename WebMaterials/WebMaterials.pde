@@ -9,6 +9,7 @@ float infoSlide;
 PFont font;
 PFont font2;
 PImage user;
+PImage facebook,twitter,github;
 PImage menu0_0, menu0_1, menu0_2, menu1_0, menu1_1, menu2_0, menu3_0, menu3_1;
 String content0_0,content0_1,content0_2,content1_0,content1_1,content2_0,content3_0,content3_1;
 PImage[][] contentImages;
@@ -16,6 +17,9 @@ String[][] contentStrs;
 
 void setup() {
   user = loadImage("user.png");
+  twitter = loadImage("twitter.png");
+  facebook = loadImage("facebook.png");
+  github = loadImage("github.png");
   menu0_0 = loadImage("menu0_0.png");
   menu0_1 = loadImage("menu0_1.png");
   menu0_2 = loadImage("menu0_2.png");
