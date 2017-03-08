@@ -6,6 +6,8 @@ class MenuDetail {
   int menuNum;
   int infoNum;
   int contentNum;
+  int userSlide;
+  int underSlide;
   
   MenuDetail(float x, float y, int selectNum) {
     positionX = x + 30;
@@ -16,7 +18,8 @@ class MenuDetail {
     for (int i = 0; i < contentNum; i++){
       details[i] = new Detail(x + 52, y + 20 - i * 46, selectNum, i);
     }
-
+    userSlide = 0;
+    underSlide = 0;
   }
   
   int getContentNum(int select) {
@@ -64,10 +67,25 @@ class MenuDetail {
     
     if (menuNum == 0){
       
+      if (userSlide < 220) {
+        userSlide += 10;
+      }else{
+        if (underSlide < 80) {
+          underSlide += 10; 
+        }
+      }
       fill(220,150);
       noStroke();
       triangle(positionX-60, positionY, positionX-80, positionY+10, positionX-80, positionY-10);
-      rect(positionX-80,positionY-100,-200,300);
+      beginShape();
+      vertex(positionX-80,positionY-100);
+      vertex(positionX-280,positionY-100);
+      vertex(positionX-280,positionY-100+userSlide);
+      vertex(positionX-240,positionY-100+userSlide);
+      vertex(positionX-235,positionY-100+userSlide+8);
+      vertex(positionX-230,positionY-100+userSlide);
+      vertex(positionX-80,positionY-100+userSlide);
+      endShape(CLOSE);
       fill(70,150);
       stroke(70,150);
       line(positionX-100,positionY-60,positionX-260,positionY-60);
@@ -77,7 +95,24 @@ class MenuDetail {
       text("Toshiyuki",positionX-180,positionY-65);
       tint(0,100);
       image(user, positionX-260, positionY-40, 160, 160);
-      
+      fill(240,150);
+      noStroke();
+      beginShape();
+      vertex(positionX-80, positionY-100+userSlide);
+      vertex(positionX-230, positionY-100+userSlide);
+      vertex(positionX-235, positionY-100+userSlide+8);
+      vertex(positionX-240, positionY-100+userSlide);
+      vertex(positionX-280, positionY-100+userSlide);
+      vertex(positionX-280, positionY-100+userSlide+underSlide);
+      vertex(positionX-80, positionY-100+userSlide+underSlide);
+      endShape(CLOSE);
+      textSize(25);
+      fill(70,150);
+      textAlign(RIGHT);
+      if (underSlide >= 80){
+        text("[ slt666666 ]",positionX-180,positionY+160);
+        text("SNS icon ... etc",positionX-150,positionY+190);
+      }
     }
   }
 }

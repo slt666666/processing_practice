@@ -59,7 +59,7 @@ class Detail {
         textSize(20);
         textAlign(CENTER);
         text(content,positionX+40,positionY-29,90,42);
-        if (selectNum == 0 || selectNum == 1 || (selectNum == 3 && detailNum == 0)){ 
+        if (selectNum == 0 || selectNum == 1 || selectNum == 2 || (selectNum == 3 && detailNum == 0)){ 
           info = new DetailInfo(selectNum,detailNum);
           infoIsset = true;
         }
